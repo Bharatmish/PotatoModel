@@ -11,14 +11,14 @@
       }
     ],
     "routes": [
-      {
-        "src": "/api/main",
-        "dest": "api/main.py"
-      },
-      {
-        "src": "/api/main-tf-serving",
-        "dest": "api/main-tf-serving.py"
-      }
-    ]
+      { "src": "/predict", "dest": "main.py" },
+      { "src": "/predict-tf", "dest": "main-tf-serving.py" },
+      { "src": "/ping", "dest": "main.py" }
+    ],
+    "env": {
+      "API_KEY": "@api-key",
+      "API_ENDPOINT": "@api-endpoint",
+      "TF_SERVING_ENDPOINT": "http://localhost:8501/v1/models/potato-models:predict"
+    }
   }
   
